@@ -1,17 +1,24 @@
 import React from 'react'
-
-function Post() {
+import {format} from 'date-fns'
+import { Link } from 'react-router-dom'
+function Post({_id,title,summary,cover,content,createdAt,author}) {
   return (
     <div className="post">
     <div className="image">
-      <img src="https://files.porsche.com/filestore/image/multimedia/none/992-carrera-t-modelimage-sideshot/thumbwhite/2badf542-4ed8-11ed-80f7-005056bbdc38;sB;twebp/porsche-thumbwhite.webp" alt="" />
-      </div> <div className="texts">
-      <h2>Porsche 911</h2>
+    <Link to={`/post/${_id}`}> 
+      <img src={'http://localhost:4000/'+cover} alt="" />
+    </Link>
+      
+      </div> <div className="texts">  
+      <Link to={`/post/${_id}`}> 
+      <h2>{title}</h2>
+      </Link>
+      
       <p className="info">
-        <a className="auther">shebin</a>
-        <time>2023-07-14 16:45</time>
+        <a className="auther">{author.username}</a>
+        <time>{format(new Date( createdAt), 'MMM d, yyyy HH:mm')}</time>
       </p>
-      <p className='summary' >The Porsche 911 is a two-door 2+2 high performance rear-engined sports car introduced in September 1964 by Porsche AG of Stuttgart, Germany.</p>
+      <p className='summary' >{summary}</p>
       </div>
     </div>
   )
