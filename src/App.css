@@ -103,3 +103,23 @@ button{
 form.login h1, form.register h1{
   text-align: center;
 }
+
+div.edit-row{
+  text-align: center;
+}
+div.post-page a.edit-btn{
+  background-color: #333;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+a svg{
+  height: 20px;
+
+}
